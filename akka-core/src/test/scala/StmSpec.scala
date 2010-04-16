@@ -19,7 +19,7 @@ class StmSpec extends
     it("should be able to do multiple consecutive atomic {..} statements") {
       import Transaction.Local._
 
-      lazy val ref = TransactionalState.newRef[Int]
+      val ref = TransactionalState.newRef[Int]
 
       def increment = atomic {
         ref.swap(ref.get.getOrElse(0) + 1)
@@ -38,7 +38,7 @@ class StmSpec extends
     it("should be able to do nested atomic {..} statements") {
       import Transaction.Local._
 
-      lazy val ref = TransactionalState.newRef[Int]
+      val ref = TransactionalState.newRef[Int]
 
       def increment = atomic {
         ref.swap(ref.get.getOrElse(0) + 1)
@@ -60,7 +60,7 @@ class StmSpec extends
     it("should roll back failing nested atomic {..} statements") {
       import Transaction.Local._
 
-      lazy val ref = TransactionalState.newRef[Int]
+      val ref = TransactionalState.newRef[Int]
 
       def increment = atomic {
         ref.swap(ref.get.getOrElse(0) + 1)
