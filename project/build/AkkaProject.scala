@@ -23,8 +23,9 @@ class AkkaParent(info: ProjectInfo) extends DefaultProject(info) {
   lazy val deployPath = info.projectPath / "deploy"
   lazy val distPath = info.projectPath / "dist"
 
+  // note: remove -no-specialization if fixed in compiler in RC2
   override def compileOptions = super.compileOptions ++
-    Seq("-deprecation", "-Xmigration", "-Xcheckinit", "-Xstrict-warnings", "-Xwarninit", "-encoding", "utf8").map(x => CompileOption(x))
+    Seq("-no-specialization", "-deprecation", "-Xmigration", "-Xcheckinit", "-Xstrict-warnings", "-Xwarninit", "-encoding", "utf8").map(x => CompileOption(x))
 
   override def javaCompileOptions = JavaCompileOption("-Xlint:unchecked") :: super.javaCompileOptions.toList
 
