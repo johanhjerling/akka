@@ -17,7 +17,7 @@ class AkkaParent(info: ProjectInfo) extends DefaultProject(info) {
   val ATMO_VERSION = "0.5.4"
   val CASSANDRA_VERSION = "0.5.0"
   val LIFT_VERSION = "2.0-scala280-SNAPSHOT"
-  val SCALATEST_VERSION = "1.0.1-for-scala-2.8.0.Beta1-with-test-interfaces-0.3-SNAPSHOT"
+  val SCALATEST_VERSION = "1.0.1-for-scala-2.8.0.RC1-SNAPSHOT"
 
   // ------------------------------------------------------------
   lazy val deployPath = info.projectPath / "deploy"
@@ -164,7 +164,7 @@ class AkkaParent(info: ProjectInfo) extends DefaultProject(info) {
   class AkkaUtilProject(info: ProjectInfo) extends AkkaDefaultProject(info, distPath) {
     val werkz = "org.codehaus.aspectwerkz" % "aspectwerkz-nodeps-jdk5" % "2.1" % "compile"
     val werkz_core = "org.codehaus.aspectwerkz" % "aspectwerkz-jdk5" % "2.1" % "compile"
-    val configgy = "net.lag" % "configgy" % "2.8.0.Beta1-1.5-SNAPSHOT" % "compile"
+    val configgy = "net.lag" % "configgy" % "2.8.0.RC1-1.5.2-SNAPSHOT" % "compile"
   }
 
   class AkkaJavaUtilProject(info: ProjectInfo) extends AkkaDefaultProject(info, distPath) {
